@@ -330,7 +330,7 @@ def install_setup_reg():
     print(f"Done executing {SETUP_REG_FILE}")
   else:
     print(f"Error while executing {SETUP_REG_FILE}")
-    print("If this system has ww23(new) BKC, please run the below commands,reboot the SUT and restart the installation\n`sudo yum remove docker-ce-cli docker-ce docker-compose-plugin`\n`rm -rf /root/applications.benchmarking.benchmark.platform-hero-features/`\n`sudo grubby --update-kernel=ALL --args=\"systemd.unified_cgroup_hierarchy=0\"`")
+    # print("If this system has ww23(new) BKC, please run the below commands,reboot the SUT and restart the installation\n`sudo yum remove docker-ce-cli docker-ce docker-compose-plugin`\n`rm -rf /root/applications.benchmarking.benchmark.platform-hero-features/`\n`sudo grubby --update-kernel=ALL --args=\"systemd.unified_cgroup_hierarchy=0\"`")
     sys.exit()
 
 
@@ -394,7 +394,7 @@ def install_setup_k8s():
     print(f"Done executing {SETUP_K8S_FILE}")
   else:
     print(f"Error while executing {SETUP_K8S_FILE}")
-    sys.exit()  
+    # sys.exit()  
     
     
 
