@@ -4,7 +4,7 @@ import sys
 
 VERIFY_PROXY_SCRIPT = "workloads_execution_prerequisite_Verify_Proxy_CentOS.sh"
 http_proxy1 = "http://proxy-chain.intel.com:911"
-http_proxy2 = "http://proxy-chain.intel.com:911"
+http_proxy2 = "http://proxy-chain.intel.com:912"
 https_proxy1 = "http://proxy-chain.intel.com:911"
 https_proxy2 = "http://proxy-chain.intel.com:912"
 
