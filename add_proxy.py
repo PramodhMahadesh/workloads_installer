@@ -9,8 +9,6 @@ https_proxy1 = "http://proxy-chain.intel.com:911"
 https_proxy2 = "http://proxy-chain.intel.com:912"
 
 def check_proxy():
-    
-    
     out = subprocess.run([f"./{VERIFY_PROXY_SCRIPT}"],stdout=subprocess.PIPE,stderr=subprocess.PIPE).stdout.decode()
     k = out.splitlines()
     if (k[0] == http_proxy1 or k[0] == http_proxy2) and (k[1] == https_proxy1 or k[1] == https_proxy2):
