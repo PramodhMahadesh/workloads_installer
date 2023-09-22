@@ -127,10 +127,10 @@ def get_docker():
       sys.exit()
       
 def check_proxy():
-    http_proxy1 = "http://proxy-dmz.intel.com:911"
-    http_proxy2 = "http://proxy-dmz.intel.com:912"
-    https_proxy1 = "http://proxy-dmz.intel.com:911"
-    https_proxy2 = "http://proxy-dmz.intel.com:912"
+    http_proxy1 = "http://proxy-chain.intel.com:911"
+    http_proxy2 = "http://proxy-chain.intel.com:912"
+    https_proxy1 = "http://proxy-chain.intel.com:911"
+    https_proxy2 = "http://proxy-chain.intel.com:912"
     
     out = subprocess.run([f"./{VERIFY_PROXY_SCRIPT}"],stdout=subprocess.PIPE,stderr=subprocess.PIPE).stdout.decode()
     k = out.splitlines()
@@ -144,10 +144,10 @@ def check_proxy():
     
 def add_proxy():
     # Define the proxy settings
-    http_proxy1 = "http://proxy-dmz.intel.com:911"
-    http_proxy2 = "http://proxy-dmz.intel.com:912"
-    https_proxy1 = "http://proxy-dmz.intel.com:911"
-    https_proxy2 = "http://proxy-dmz.intel.com:912"
+    http_proxy1 = "http://proxy-chain.intel.com:911"
+    http_proxy2 = "http://proxy-chain.intel.com:912"
+    https_proxy1 = "http://proxy-chain.intel.com:911"
+    https_proxy2 = "http://proxy-chain.intel.com:912"
    
     # Read the contents of the .bashrc file
     bashrc_path = os.path.expanduser("/root/.bashrc")

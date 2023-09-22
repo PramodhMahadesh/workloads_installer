@@ -4,7 +4,7 @@ import functions
 
 functions.init()
 functions.read_details(functions.INI_FILE)
-functions.check_proxy()
+#functions.check_proxy()
 functions.clone_git()
 os.chdir(functions.CWD)
 
