@@ -16,7 +16,7 @@
 4. install_sandstone.sh -> Installs the latest version sandstone workload.
 5. install_stress_ng.sh -> Installs the latest stress-ng workload.
 
-After the installation, it will also perform a sanity and print out the result with info like installation status, version, sanity status. This info is also logged and will be stored in "Installations.log" file in the same folder /br>
+After the installation, it will also perform a sanity test and print out the result with info like installation status, version, sanity status. This info is also logged and will be stored in "Installations.log" file in the same folder.
 
 Note: 
 1. Before sandstone installation, please make sure to copy the test log files in the sandstone folder if those are required.
