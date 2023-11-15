@@ -306,7 +306,7 @@ def install_setup_dev():
   child.sendline(SUT_PASSWORD)
   print(child.before.decode())
   child.interact()
-  k = check_output(output_file)
+  k = check_setup_output(output_file)
   if k:
     print(f"Done executing {SETUP_DEV_FILE}")
   else:
@@ -325,7 +325,7 @@ def install_setup_reg():
   child.sendline(SUT_PASSWORD)
   print(child.before.decode())
   child.interact()
-  k = check_output(output_file)
+  k = check_setup_output(output_file)
   if k:
     print(f"Done executing {SETUP_REG_FILE}")
   else:
@@ -357,7 +357,7 @@ def install_setup_docker():
     #with open(output_file,'r') as f:
       #print(f.read())
       
-  k = check_output(output_file)
+  k = check_setup_output(output_file)
   if k:
     print(f"Done executing {SETUP_DOCKER_FILE}")
   else:
@@ -389,7 +389,7 @@ def install_setup_k8s():
     #with open(output_file,'r') as f:
       #print(f.read())
       
-  k = check_k8s_output(output_file)
+  k = check_setup_output(output_file)
   if k:
     print(f"Done executing {SETUP_K8S_FILE}")
   else:
@@ -447,6 +447,33 @@ def check_k8s_output(filename):
     
     return True if flag==0 else False
 
+def check_setup_output(filename):
+  with open(filename,'r') as f:
+    output_lines = f.readlines()[-7:-1]
+    flag=0
+    result_line_flag = 0
+    for output_line in output_lines:
+      #print(output_line)
+      match1 = re.search(r'failed=(\d+)', output_line)
+      match2 = re.search(r'unreachable=(\d+)', output_line)
+      if match1 and match2:
+        result_line_flag += 1
+        failed_value = int(match1.group(1))
+        unreachable_value = int(match2.group(1))
+        if failed_value > 0:
+          flag+=1
+          print("Failed installations detected. Please check...")
+          print(output_line)
+        if unreachable_value > 0:
+          flag+=1
+          print("Unreachable installations detected. Please check...")
+          print(output_line)
+    
+    if result_line_flag == 0: 
+      print("No failed/unreachable lines seen in the last six lines")
+      return False
+
+    return True if flag==0 else False
 
 def update_build_username():
   version = get_git_version()
