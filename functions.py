@@ -599,8 +599,12 @@ def parse_test(filename):
                     if percent<100:
                         failed +=1
         print(f"No. of loops = {loops}\nNo. of loops passed = {passed}\nNo. of loop failed = {failed}")
-        HERO_SANITY_STATUS = "PASS"
-        return True
+        if failed > 0:
+          HERO_SANITY_STATUS = "FAIL"
+          return False
+        else:
+          HERO_SANITY_STATUS = "PASS"
+          return True
 
 def update_installation_status():
    global timestamp
