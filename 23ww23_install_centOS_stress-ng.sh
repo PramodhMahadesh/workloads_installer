@@ -10,7 +10,7 @@ git pull
 make clean
 make -j 50
 #./stress-ng 
-sudo yum -y install keyutils-libs-devel kmod-devel libaio-devel libatomic libattr-devel libbsd-devel libcap-devel libgbm-devel libgcrypt-devel libglvnd-core-devel libglvnd-devel libjpeg-devel libmd-devel mpfr-devel libX11-devel libXau-devel libxcb-devel lksctp-tools-devel xorg-x11-proto-devel xxhash-devel zlib-devel
+sudo yum install -y keyutils-libs-devel kmod-devel libaio-devel libatomic libattr-devel libbsd-devel libcap-devel libgbm-devel libgcrypt-devel libglvnd-core-devel libglvnd-devel libjpeg-devel libmd-devel mpfr-devel libX11-devel libXau-devel libxcb-devel lksctp-tools-devel xorg-x11-proto-devel xxhash-devel zlib-devel
 sudo yum makecache --refresh
 sudo yum update
 sudo yum -y install stress-ng
