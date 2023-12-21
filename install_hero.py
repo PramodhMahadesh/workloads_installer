@@ -17,6 +17,7 @@ functions.add_ip_username()
 
 functions.install_setup_dev()
 functions.install_setup_reg()
+functions.install_setup_reg()
 functions.install_setup_docker()
 #functions.install_setup_k8s()
 functions.update_build_username()
