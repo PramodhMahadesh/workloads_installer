@@ -260,7 +260,8 @@ def add_ip_username():
   with open(CONFIG_FILE_PATH,'r') as f:
     k = f.readlines()
     for i in range(len(k)):
-      if '"user_name"' in k[i]:
+      if 'user_name":' in k[i]:
+        k[i] = k[i].replace("# ","")
         v = k[i].split(":")
         v[1] = f' "{SUT_USERNAME}",\n'
         k[i] = ":".join(v)
