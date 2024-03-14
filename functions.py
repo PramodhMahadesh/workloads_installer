@@ -297,7 +297,7 @@ def get_ip_address():
 
 def install_setup_dev():
   #os.chdir(SETUP_DIR)
-  child = pexpect.spawn(f"{SETUP_DIR}/{SETUP_DEV_FILE} {SUT_USERNAME}@{IP}")
+  child = pexpect.spawn(f"{SETUP_DIR}/{SETUP_DEV_FILE}")
   
   output_file = 'output1.txt'
   fout = open(output_file,'wb')
